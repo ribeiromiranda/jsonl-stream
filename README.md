@@ -2,8 +2,9 @@
 
 [![npm version](https://img.shields.io/npm/v/jsonl-stream.svg?style=flat-square)](https://www.npmjs.com/package/jsonl-stream)
 [![npm downloads](https://img.shields.io/npm/dm/jsonl-stream.svg?style=flat-square)](https://www.npmjs.com/package/jsonl-stream)
-[![bundle size](https://img.shields.io/bundlephobia/minzip/jsonl-stream?style=flat-square)](https://bundlephobia.com/package/jsonl-stream)
 [![license](https://img.shields.io/npm/l/jsonl-stream.svg?style=flat-square)](LICENSE)
+
+
 
 A library for progressive parsing of **JSON Lines (JSONL)** — also known as **NDJSON** (Newline Delimited JSON) streams.
 
