@@ -11,17 +11,17 @@ Specifically designed to process real-time data streams, such as AI model respon
 
 ---
 
-## 🚀 Key Features
+## Key Features
 
-- **Smart Progressive Parsing**: Uses an internal character-by-character decoder that detects partial/incomplete structures and buffers them until the next chunk arrives.
-- **Complex Structures Support**: Supports nested objects, complex arrays, strings with unicode escape characters (`\uXXXX`), booleans, `null`, and numbers in various notations (including scientific notation like `-123.45e2`).
-- **Node.js Stream API Compatibility**: Exposes a `JsonlStream` class extending the native Node.js `Transform` class, integrating seamlessly with pipes and streams in object mode (`readableObjectMode: true`). Ideal for HTTP requests and other streaming protocols.
+- **Smart Parsing**: Uses an internal character-by-character decoder that detects incomplete structures and buffers them until the next chunk arrives.
+- **Complex Structures**: Supports nested objects, complex arrays, strings with unicode escape characters (`\uXXXX`), booleans, `null`, and numbers in various notations (including scientific notation like `-123.45e2`).
+- **Stream API Compatibility**: Exposes a `JsonlStream` class extending the native Node.js `Transform` class, integrating seamlessly with pipes and streams in object mode (`readableObjectMode: true`). Ideal for HTTP requests and other streaming protocols.
 - **Support for Diverse Line Endings**: Works correctly with Windows (`\r\n`), Unix/modern macOS (`\n`), and classic macOS (`\r`) line endings, handling extra whitespaces, tabs, and indentation gracefully.
 - **Robust End-Of-File (EOF) Handling**: Allows explicitly indicating when the stream has ended (`isEnd = true`), forcing the parsing of remaining buffered numbers or primitive values.
 
 ---
 
-## 📦 Installation
+## Installation
 
 ```bash
 npm install jsonl-stream
@@ -29,15 +29,15 @@ npm install jsonl-stream
 
 ---
 
-## 🛠️ How to Use
+## How to Use
 
-The library is designed to be extremely flexible. It works seamlessly with the Node.js Stream API or by manually feeding chunks from persistent connections like WebSockets, gRPC, or Server-Sent Events (SSE).
+The library is designed to be flexible. It works with the Node.js Stream API or by manually feeding chunks from persistent connections like WebSockets, gRPC, or Server-Sent Events (SSE).
 
-### 1. Consuming data via HTTP Stream (e.g. LLM APIs, SSE)
+### 1. Consuming data via HTTP Stream
 
-Ideal for consuming APIs that send real-time data over HTTP/HTTPS (like streaming tokens from artificial intelligence models).
+Ideal for consuming APIs that send real-time data over HTTP/HTTPS.
 
-#### Using native `fetch` (Node.js 18+)
+#### Using `fetch` (Node.js 18+)
 
 ```typescript
 import { Readable } from "node:stream";
@@ -65,7 +65,7 @@ async function consumeFetchStream() {
 consumeFetchStream();
 ```
 
-#### Using the native `https` module
+#### Using the `https` module
 
 ```typescript
 import https from "node:https";
@@ -137,6 +137,12 @@ npm test
 
 ---
 
-## 📄 License
+## Issues & Feedback
+
+If you encounter any bugs, have questions, or would like to request a new feature, please feel free to [open an issue](https://github.com/ribeiromiranda/jsonl-stream/issues) on GitHub. Your feedback and contributions are highly welcome!
+
+---
+
+## License
 
 This project is licensed under the **MIT** License. See the [LICENSE](LICENSE) file for details.

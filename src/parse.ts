@@ -22,7 +22,7 @@ class Decoder {
 
     let start = 0;
     const items: any[] = [];
-    
+
     while (this.pos < this.text.length) {
       this.skipWhitespace();
       start = this.pos;
@@ -42,7 +42,7 @@ class Decoder {
     }
 
     const buffer = this.text.substring(start, this.text.length);
-    
+
     return {
       items,
       buffer,
@@ -54,7 +54,7 @@ class Decoder {
     if (this.pos >= this.text.length) throw new IncompleteError();
 
     const char = this.text.charCodeAt(this.pos);
-    
+
     if (char === 123) { // '{'
       return this.parseObject();
     } else if (char === 91) { // '['
@@ -82,7 +82,7 @@ class Decoder {
     while (true) {
       this.skipWhitespace();
       if (this.pos >= this.text.length) throw new IncompleteError();
-      
+
       if (this.text.charCodeAt(this.pos) === 125) { // '}'
         this.nextPos();
         return obj;
@@ -105,7 +105,7 @@ class Decoder {
 
       this.skipWhitespace();
       if (this.pos >= this.text.length) throw new IncompleteError();
-      
+
       if (this.text.charCodeAt(this.pos) !== 58) { // ':'
         throw new Error(`Expected ':' after key in object at position ${this.pos}`);
       }
@@ -170,7 +170,7 @@ class Decoder {
         result += this.text.substring(start, this.pos);
         this.nextPos(); // skip '\'
         if (this.pos >= this.text.length) throw new IncompleteError();
-        
+
         const escChar = this.text[this.pos];
         if (escChar === '"' || escChar === '\\' || escChar === '/') {
           result += escChar;
@@ -240,7 +240,7 @@ class Decoder {
         break;
       }
     }
-    
+
     if (this.pos >= this.text.length && !this.isEnd) {
       throw new IncompleteError();
     }
