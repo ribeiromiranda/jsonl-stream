@@ -1,6 +1,6 @@
 {
   "name": "jsonl-stream",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A high-performance streaming parser for JSON Lines (JSONL) format in Node.js and TypeScript",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
