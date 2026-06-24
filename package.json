@@ -1,0 +1,39 @@
+{
+  "name": "jsonl-stream",
+  "version": "1.0.0",
+  "description": "A high-performance streaming parser for JSON Lines (JSONL) format in Node.js and TypeScript",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run --globals",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "jsonl",
+    "stream",
+    "parser",
+    "ndjson",
+    "jsonlines",
+    "streaming"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5",
+    "vitest": "^1.5.0"
+  }
+}
