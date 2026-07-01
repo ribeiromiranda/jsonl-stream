@@ -1,2 +1,23 @@
-dist/
+# Dependencies
 node_modules/
+
+# Build Output
+dist/
+build/
+coverage/
+
+# Environment Variables & Secrets
+.env
+.env.local
+.env.*.local
+
+# IDE and Editor Configurations
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS Generated Files
+.DS_Store
+Thumbs.db
+*.log

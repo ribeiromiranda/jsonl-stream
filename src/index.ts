@@ -1,3 +1,3 @@
-export * from "./parse";
-export * from "./stream";
+export { IncompleteError, JsonParserError } from "./error";
+export { JsonlStream } from "./stream";
 

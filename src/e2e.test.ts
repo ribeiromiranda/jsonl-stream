@@ -4,6 +4,8 @@ import { Readable } from "node:stream";
 import { createReadStream, writeFileSync, unlinkSync } from "node:fs";
 import { join } from "node:path";
 import { JsonlStream } from "./stream";
+import { JsonParserError } from "./error";
+
 
 describe("E2E Integration Tests (README Examples)", () => {
   let server: http.Server;
@@ -171,6 +173,7 @@ describe("E2E Integration Tests (README Examples)", () => {
       }
     } catch (err: any) {
       errorOccurred = true;
+      expect(err).toBeInstanceOf(JsonParserError);
       expect(err.message).toContain("Expected ':' after key in object");
     }
 
